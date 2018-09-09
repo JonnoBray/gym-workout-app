@@ -1,0 +1,10 @@
+<h2>Delete A Workout</h2>
+<form  #deleteForm="ngForm">
+<div class="form-group">
+  <label for="delete">Delete Item</label>
+  <select class="form-control col-md-5" id="delete" [(ngModel)]="model" #delete="ngModel" required name="delete">
+    <option *ngFor="let pow of workouts; let i = index" [value]="i">{{pow.workout}}</option>
+  </select>
+</div>
+<button type="submit" class="btn btn-success" [disabled]="!deleteForm.form.valid" (click)="onSubmit(); deleteForm.reset()">Submit</button>
+</form>

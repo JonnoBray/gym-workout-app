@@ -1,0 +1,38 @@
+
+<form class="form-horizontal" #workoutForm="ngForm">
+  <fieldset>
+    <h2>Workout Information</h2>
+    <div class="form-group">
+      <label for="workout" class="col-lg-2 control-label">Workout</label>
+      <div class="col-md-5">
+        <input type="text" class="form-control" id="workout" [(ngModel)] = "model.workout" name="workout" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-group col-md-2">
+        <label for="description" class="control-label">Weight</label>
+        <input type="number" class="form-control" id="description" [(ngModel)] = "model.weight" name="weight" required>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="type" class="control-label">Weight Type</label>
+        <input type="text" class="form-control" id="type" [(ngModel)] = "model.weightType" name="type" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="reps" class="col-lg-2 control-label">Reps</label>
+      <div class="col-lg-10">
+        <input required type="number" class="form-control" id="reps" [(ngModel)] = "model.reps" name="reps">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button class="btn btn-info my-2 my-sm-0 mr-2"
+                routerLink="/" type="button">
+          Back
+        </button>
+        <button type="submit" class="btn btn-danger" [disabled]="!workoutForm.form.valid" (click)="onSubmit(); workoutForm.reset()">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>

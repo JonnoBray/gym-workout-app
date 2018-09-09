@@ -1,0 +1,19 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Workout</th>
+    <th scope="col">Weight</th>
+    <th scope="col">Reps</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let items of workouts; let i = index">
+    <td>{{i+1}} </td>
+    <td>{{items.workout}}</td>
+    <td>{{items.weight}} {{items.weightType}}</td>
+    <td>{{items.reps}}</td>
+  </tr>
+
+  </tbody>
+</table>
